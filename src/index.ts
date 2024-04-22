@@ -15,8 +15,6 @@ connectDb();
 app.use('/users', userRoute)
 app.use('/task',taskRoute);
 
-console.log(process.env.DB_HOST);
-
 var server = app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
