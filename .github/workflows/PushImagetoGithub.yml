@@ -6,10 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    stratergy:
+    strategy:
       matrix:
         node-version: [15.x]
-
+  
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js ${{ matrix.node-version }}
@@ -35,5 +35,5 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/githubactions:latest
 
-      -name: Image digest
+      - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
